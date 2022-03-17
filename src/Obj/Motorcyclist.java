@@ -1,11 +1,9 @@
 package Obj;
 
-import com.company.AmmunitionWeightComparator;
-
 import java.util.LinkedList;
 
 public class Motorcyclist {
-    private LinkedList<Ammunition> ammunitionList;
+    public LinkedList<Ammunition> ammunitionList;
     public Motorcyclist()
     {
         this.ammunitionList = new LinkedList<>();
@@ -13,27 +11,15 @@ public class Motorcyclist {
     public void AddAmmunition(Ammunition ammunition)
     {
         if(ammunition==null)return;
+        Boolean flag = true;int i=0;
+        for(;i< ammunitionList.size();i++)if(ammunitionList.get(i).getClass()==ammunition.getClass()){flag =false; break;}
+        if(!flag) ammunitionList.remove(i);
         ammunitionList.add(ammunition);
     }
-    public double CalculateSum(LinkedList<Ammunition> ammList)
+    public double CalculateSum()
     {
         double sum=0;
-        if(ammList != null) for(Ammunition ammunition:ammList)sum+=ammunition.getPrice();
+        if(ammunitionList != null) for(Ammunition ammunition:ammunitionList)sum+=ammunition.getPrice();
         return sum;
     }
-    public void SortAmmunitionByWeight()
-    {
-        ammunitionList.sort(new AmmunitionWeightComparator());
-    }
-    public LinkedList<Ammunition> FindAllByPrice(double minPrice,double maxPrice)
-    {
-       LinkedList<Ammunition> ammunitions = new LinkedList<>();
-       for(Ammunition amm : ammunitionList)
-       {
-           if(amm.getPrice()>minPrice&&amm.getPrice()<maxPrice)ammunitions.add(amm);
-       }
-       return ammunitions;
-    }
-
-
 }
