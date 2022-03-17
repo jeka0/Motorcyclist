@@ -15,6 +15,6 @@ public abstract class Ammunition
     public double getPrice(){return price;}
     public double getWeight(){return weight;}
     @Override
-    public String toString() {return "Название: " + ammunitionName + "\nВес: " + weight + "\nЦена: " + price;}
+    public abstract String toString();
 
 }

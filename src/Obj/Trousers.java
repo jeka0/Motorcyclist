@@ -12,6 +12,6 @@ public class Trousers extends Ammunition{
     public String GetMaterials() {return materials;}
     public String GetProtectiveKneePads() {return protectiveKneePads;}
     @Override
-    public String toString() {return "Название штанов: " + super.getName() +"\nMaterials: "+materials +"\nЗащитные наколенники: "+ protectiveKneePads + "\nВес: " + super.getWeight() + "\nЦена: " + super.getPrice();}
+    public String toString() {return "Название штанов: " + super.getName() +"\nМатериал: "+materials +"\nЗащитные наколенники: "+ protectiveKneePads + "\nВес: " + super.getWeight() + "\nЦена: " + super.getPrice();}
 
 }

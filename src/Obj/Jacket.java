@@ -12,7 +12,7 @@ public class Jacket extends Ammunition{
     public String GetMaterials() {return materials;}
     public int GetNumberOfPockets() {return NumberOfPockets;}
     @Override
-    public String toString() {return "Название куртки: " + super.getName() +"\nMaterials: "+materials +"\nКоличество карманов: "+NumberOfPockets + "\nВес: " + super.getWeight() + "\nЦена: " + super.getPrice();}
+    public String toString() {return "Название куртки: " + super.getName() +"\nМатериал: "+materials +"\nКоличество карманов: "+NumberOfPockets + "\nВес: " + super.getWeight() + "\nЦена: " + super.getPrice();}
 
 }
 
