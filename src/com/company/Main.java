@@ -5,10 +5,15 @@ import Obj.Ammunition;
 import Obj.Motorcyclist;
 
 import java.util.LinkedList;
-
+/** Description Main Class
+ *  This class stored console menu
+ */
 public class Main {
+    /**Stored an instance of Database*/
     private static Db db = Db.getInstance();
+    /**Stored an instance of Motorcyclist*/
     private static Motorcyclist motorcyclist = new Motorcyclist();
+    /** Stored operation menu list as String array */
     private static String[] operationMenu = {
             "1. Добавить/Заменить амуницию мотоциклисту",
             "2. Подсчитать стоимость амуниции мотоциклиста",
@@ -18,6 +23,7 @@ public class Main {
             "6. Подсчитать общую стоимость всей амуниции",
             "7. Показать элементы амуниции соответствующие диапазону цены",
             "0. Выход"};
+    /** Stored types menu list as String array */
     private static String[] typesMenu ={
             "1. Шлема",
             "2. Куртки",
@@ -25,13 +31,17 @@ public class Main {
             "4. Штаны",
             "5. Ботинки"
     };
+    /** This is the program entry point
+     * Firsly, this method creates an instance of Database
+     * Second, get data from json
+     * and launch console menu */
     public static void main(String[] args) {
         db = Db.getInstance();
        db.ReadDB("src\\Database\\Data.json");
        menu();
     }
-
-    public static void menu()
+    /**This private method launches the nessesared method, based on user's choise*/
+    private static void menu()
     {
         boolean flag;
         do {
@@ -51,7 +61,8 @@ public class Main {
             }
         }while(flag);
     }
-    public static void typeSelectionMenu()
+    /**This private method adds a new element based on the user's choice*/
+    private static void typeSelectionMenu()
     {
         Console.PrintMenu("Выберите тип амуниции:",typesMenu);
         int num = Console.ReadInt("#/>",1,5);
